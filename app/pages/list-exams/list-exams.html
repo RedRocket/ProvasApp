@@ -1,0 +1,25 @@
+<ion-header class="opaque">
+  <ion-navbar no-border-bottom>
+    <ion-title>SuaProva</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="list-exams">
+  <h1 class="header">{{api.actualSubject.name}}</h1>
+  <div class="list-of-exams">
+    <div class="exam-item" *ngFor="let exam of api.exams">
+      <ion-grid>
+        <ion-row>
+          <ion-col width-33><img src="../img/prova.png"/></ion-col>
+          <ion-col width-66>
+            <h3 class="exam-header">{{exam.name}}</h3>
+            <h5 class="exam-subheader">{{exam.views}} Visualizações</h5>
+            <p>Publicado por: {{exam.user.name}}</p>
+            <ion-row>
+              <button class="see-exam-button" (click)="goToExam(exam.id)">Ver prova</button>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>

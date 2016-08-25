@@ -1,0 +1,38 @@
+<ion-header class="opaque">
+  <ion-navbar no-border-bottom>
+    <ion-title>SuaProva</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="not-found">
+  <h1 class="header force-x-center">Não encontrou o que buscava?</h1>
+  <h1 class="sub-header force-x-center">Nos informe o que está faltando e nós lhe avisaremos quando estiver disponível</h1>
+  <ion-list class="select-list">
+    <ion-item (click)="selectType()">
+      O que está faltando? <span class="answer">{{requisition.type}}</span>
+    </ion-item>
+    <ion-item class="text-input">
+      <ion-label stacked>Ex: Hey pessoal, não encontrei o curso <br>de Biologia na UFRJ</ion-label>
+      <ion-input [(ngModel)]="requisition.text"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-card class="select-card" [ngClass]="{'visible': typeSelected, 'invisible': !typeSelected}">
+    <ion-card-content>
+      <ion-list no-lines>
+        <ion-item (click)="chooseType('Cidade')">
+          A minha cidade
+        </ion-item>
+        <ion-item (click)="chooseType('Universidade')">
+          A minha universidade
+        </ion-item>
+        <ion-item (click)="chooseType('Curso')">
+          O meu curso
+        </ion-item>
+        <ion-item (click)="chooseType('Disciplina')">
+          A minha disciplina
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <button id="send-button" (click)="sendRequisition()">Enviar</button>
+</ion-content>

@@ -1,0 +1,59 @@
+<ion-header class="opaque">
+  <ion-navbar no-border-bottom>
+    <ion-title>SuaProva</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="search">
+  <h1 class="header force-x-center">Vamos encontrar a prova que você precisa?</h1>
+  <ion-list class="select-list">
+    <ion-item (click)="selectState()">
+      Escolha seu estado <span class="answer">{{filter.state.name}}</span>
+    </ion-item>
+
+    <ion-item (click)="selectCity()" [ngClass]="{'disabled': filter.state.name == null}">
+      Escolha sua cidade <span class="answer">{{filter.city.name}}</span>
+    </ion-item>
+
+    <ion-item (click)="selectUniversity()" [ngClass]="{'disabled': filter.city.name == null}">
+      Escolha sua universidade <span class="answer">{{filter.university.name}}</span>
+    </ion-item>
+  </ion-list>
+
+  <ion-card class="select-card" [ngClass]="{'visible': stateSelected, 'invisible': !stateSelected}">
+    <ion-card-content>
+      <ion-list no-lines>
+        <ion-item *ngFor="let state of api.states" (click)="chooseState(state)">
+          {{state.name}}
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card class="select-card" [ngClass]="{'visible': citySelected, 'invisible': !citySelected}">
+    <ion-card-content>
+      <ion-list no-lines>
+        <ion-item *ngFor="let city of api.cities" (click)="chooseCity(city)">
+          {{city.name}}
+        </ion-item>
+        <ion-item (click)="notFound()">
+          Não encontrei a minha cidade
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card class="select-card" [ngClass]="{'visible': universitySelected, 'invisible': !universitySelected}">
+    <ion-card-content>
+      <ion-list no-lines>
+        <ion-item *ngFor="let university of api.universities" (click)="chooseUniversity(university)">
+          {{university.name}}
+        </ion-item>
+        <ion-item (click)="notFound()">
+          Não encontrei a minha universidade
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

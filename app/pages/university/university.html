@@ -1,0 +1,47 @@
+<ion-header class="opaque">
+  <ion-navbar no-border-bottom>
+    <ion-title>SuaProva</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="university">
+  <ion-card id="photo-card">
+    <img src="../img/college.png"/>
+    <div class="card-title">{{api.actualUniversity.name}}</div>
+  </ion-card>
+  <h1 class="header force-x-center">Vamos encontrar a prova que você precisa?</h1>
+  <ion-list class="select-list">
+    <ion-item (click)="selectCourse()">
+      Escolha o curso <span class="answer">{{filter.course.name}}</span>
+    </ion-item>
+
+    <ion-item (click)="selectSubject()" [ngClass]="{'disabled': filter.subject.name == null}">
+      Escolha a disciplina <span class="answer">{{filter.subject.name}}</span>
+    </ion-item>
+  </ion-list>
+
+  <ion-card class="select-card" [ngClass]="{'visible': courseSelected, 'invisible': !courseSelected}">
+    <ion-card-content>
+      <ion-list no-lines>
+        <ion-item *ngFor="let course of api.courses" (click)="chooseCourse(course)">
+          {{course.name}}
+        </ion-item>
+        <ion-item>
+          Não encontrei o meu curso
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="select-card" [ngClass]="{'visible': subjectSelected, 'invisible': !subjectSelected}">
+    <ion-card-content>
+      <ion-list no-lines>
+        <ion-item *ngFor="let subject of api.subjects" (click)="chooseSubject(subject)">
+          {{subject.name}}
+        </ion-item>
+        <ion-item>
+          Não encontrei a minha disciplina
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

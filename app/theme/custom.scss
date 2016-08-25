@@ -1,0 +1,74 @@
+.toolbar-title{
+  color: black;
+}
+
+.toolbar-background{
+  background-color: #ef5350;
+}
+
+.bar-button-default{
+	color: white;
+}
+
+.card-background-page {
+  ion-card {
+    position: relative;
+    text-align: center;
+    max-height: 120px !important;
+  }
+  .card-title {
+    position: absolute;
+    bottom: 3%;
+    left: 35%;
+    font-size: 1.6em;
+    font-weight: 400;
+    color: #fff;
+    transform: translate(-50%, 0%);
+  }
+  .card-subtitle {
+    font-size: 1.3em;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    color: #fff;
+  }
+}
+.photo-subtitle {
+  transform: translateY(50%);
+  position: absolute;
+  bottom: 50%;
+  right: 20px;
+}
+
+.photo-title{
+  position: absolute;
+  bottom: 46%;
+  transform: translateY(50%);
+}
+
+ion-list > .item:first-child {
+  border-top: none;
+}
+
+ion-list > .item:last-child {
+  border-bottom: none;
+}
+
+ion-list > .item:last-child .item-inner{
+  border-bottom: 1px solid #c8c7cc;
+}
+
+.maxed-height {
+  max-height: 120px !important;
+}
+
+.maxed-height-160 {
+  max-height: 160px !important;
+}
+
+.logo-icon{
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+}

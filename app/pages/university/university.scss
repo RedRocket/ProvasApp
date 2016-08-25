@@ -1,0 +1,120 @@
+.university{
+  background-color: white;
+  background: url(../../img/bg.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  #photo-card{
+    position: relative;
+    margin: 0;
+    width: 100%;
+    box-shadow: none;
+    max-height: 180px;
+
+    .card-title{
+      position: absolute;
+      bottom: 10px;
+      color: white;
+      left: 20px;
+      font-size: larger;
+      letter-spacing: 1px;
+      font-weight: 200;
+    }
+
+    .card-subtitle{
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      color: white;
+    }
+  }
+
+  .answer{
+    text-align: right;
+    float: right;
+  }
+
+  .avatar-img{
+    border-radius: 30px;
+  }
+
+  ion-list > .item:last-child .item-inner{
+    border-bottom: none;
+  }
+
+  .header{
+    position: absolute;
+    top: 180px;
+    font-weight: 300;
+    font-size: x-large;
+    color: black;
+    width: 80%;
+    text-align: center;
+  }
+
+  .force-x-center{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .select-list{
+    position: absolute;
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 300px;
+  }
+
+  .item{
+    background-color: #5072b0;
+    border-radius:40px;
+    margin-bottom: 10px;
+  }
+
+  ion-label{
+    color: white;
+  }
+
+  .select-text{
+    color: white;
+  }
+
+  .select-icon {
+    opacity: 0;
+  }
+
+
+  .select-card{
+    transition: all 0.5s ease;
+    position: absolute;
+    max-height: 300px;
+    overflow: scroll;
+    bottom: 0px;
+    z-index: 999999;
+    margin: 0px;
+    width: 100%;
+
+
+    .item{
+      background-color: #f9f9f9;
+      border-radius: 3px;
+      margin-bottom: 10px;
+    }
+
+    ion-label{
+      color: black;
+    }
+  }
+
+  .select-card.visible{
+    max-height: 300px;
+  }
+
+
+  .select-card.invisible{
+    max-height: 0px;
+  }
+}
